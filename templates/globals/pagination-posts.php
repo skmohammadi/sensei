@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 ?>
 <nav id="post-entries" class="post-entries fix">
-    <div class="nav-prev fl"><?php previous_post_link( '%link', '<span class="meta-nav"></span> %title' ); ?></div>
-    <div class="nav-next fr"><?php next_post_link( '%link', '%title <span class="meta-nav"></span>' ); ?></div>
+	<?php if (get_previous_post()) { ?>
+	    <div class="nav-prev fl"><?php previous_post_link( '%link', '<span class="meta-nav"></span> %title' ); ?></div>
+	<?php } ?>
+	<?php if (get_next_post()) { ?>
+	    <div class="nav-next fr"><?php next_post_link( '%link', '%title <span class="meta-nav"></span>' ); ?></div>
+    <?php } ?>
 </nav><!-- #post-entries -->
